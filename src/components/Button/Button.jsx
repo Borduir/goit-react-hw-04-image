@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 export default function Button({ loadMore }) {
   return (
     <button className="Button" type="button" onClick={loadMore}>

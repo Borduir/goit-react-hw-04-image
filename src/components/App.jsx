@@ -20,7 +20,7 @@ export function App() {
         .then(response => response.json())
         .then(response => {
           if (response.hits.length) {
-            setSearchResults([...searchResults, ...response.hits]);
+            setSearchResults(s => [...s, ...response.hits]);
             setButtonNeedRender(true);
           } else {
             setButtonNeedRender(false);

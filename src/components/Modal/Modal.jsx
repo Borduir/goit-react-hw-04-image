@@ -8,18 +8,18 @@ export default function Modal({
   largeImageURL,
   searchbarValue,
 }) {
+  const hanleKeyDown = event => {
+    if (event.code === 'Escape') {
+      showModalToggle();
+    }
+  };
+
   useEffect(() => {
     window.addEventListener('keydown', hanleKeyDown);
     return () => {
       window.removeEventListener('keydown', hanleKeyDown);
     };
   }, []);
-
-  const hanleKeyDown = event => {
-    if (event.code === 'Escape') {
-      showModalToggle();
-    }
-  };
 
   const handleBackdropClick = event => {
     if (event.target === event.currentTarget) {
