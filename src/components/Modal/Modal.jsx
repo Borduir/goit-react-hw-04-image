@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 const modalRoot = document.querySelector('#modal-root');
+console.log(modalRoot);
 
 export default function Modal({
   showModalToggle,
@@ -15,10 +16,11 @@ export default function Modal({
   };
 
   useEffect(() => {
-    window.addEventListener('keydown', hanleKeyDown);
+    document.addEventListener('keydown', hanleKeyDown);
     return () => {
-      window.removeEventListener('keydown', hanleKeyDown);
+      document.removeEventListener('keydown', hanleKeyDown);
     };
+    //eslint-disable-next-line
   }, []);
 
   const handleBackdropClick = event => {

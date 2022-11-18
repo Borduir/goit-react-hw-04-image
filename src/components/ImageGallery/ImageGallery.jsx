@@ -6,7 +6,7 @@ export default function ImageGallery({
   searchResults,
   status,
 }) {
-  const renderFetchedImages = (searchResults, searchbarValue) => {
+  const renderFetchedImages = () => {
     return searchResults.map(searchResult => (
       <ImageGalleryItem
         key={searchResult.id}
@@ -17,9 +17,7 @@ export default function ImageGallery({
   };
   return (
     <div>
-      <ul className="ImageGallery">
-        {renderFetchedImages(searchResults, searchbarValue)}
-      </ul>
+      <ul className="ImageGallery">{renderFetchedImages()}</ul>
       {status === 'loading' && Loader()}
     </div>
   );
